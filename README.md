@@ -2,4 +2,4 @@
 
 Comandos Básicos\
 Bash Scripting \
-Debian 12\
+Debian 12
