@@ -1,0 +1,8 @@
+Esto es un texto al fina en bash
+fin 
+dije fin 
+finaliza carambas
+
+No quiero dejar 
+nano pero no hay material tanto 
+como en VIM
