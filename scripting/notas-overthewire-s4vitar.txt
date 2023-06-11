@@ -1,0 +1,40 @@
+---Busca archivos por permisos
+
+find . -type f -printf "%f\t%p\t%u\t%g\t%m\n" | column -t
+
+---Muestra permisos especiales
+lsattr
+--busca por lectura, ejecutable no y permisos
+a. find . -type f -readable ! -executable -size  1033c
+
+---formateo 
+a. find . -type f -readable ! -executable -size  1033c | xargs cat | xargs
+
+--- bandit 6
+a. find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat
+
+---batdit 7
+a. grep "millionth" data.txt 
+b. awk '/millionth/' data.txt | awk '{print $2}'
+
+
+---bandit 8
+a. cat data.txt | sort | uniq -u
+
+---bandit 9
+
+a. strings data.txt | grep "==="
+b. strings data.txt | grep "===" | while  read line; do echo $line; done
+c. contador=1; strings data.txt | grep "===" | while  read line; do echo "Linea $contador: $line"; let contador+=1; done
+d. contador=1; strings data.txt | grep "===" | while  read line; do echo "Linea $contador: $line"; let contador+=1; done | awk 'NR==4' | awk 'NF{print $NF}'
+
+---bandit 10
+a. cat data.txt | base64 -d
+b. cat data.txt | base64 -d | tr ' ' '\n'
+
+
+---bandit11
+a. cat data.txt  | tr '[G-ZA-Fg-za-f]' '[T-ZA-St-za-s]'
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+
